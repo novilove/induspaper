@@ -1,0 +1,250 @@
+/*
+  Base de Sistema de Grilla Responsiva (Grid System)
+  por [Tu Nombre/Experto Web]
+*/
+
+/*
+  Configuración básica de box-sizing para facilitar el cálculo de anchos y paddings.
+  Esto asegura que el padding y el borde se incluyan en el ancho total de un elemento.
+*/
+*,
+*::before,
+*::after {
+  /*   box-sizing: border-box; */
+}
+.d-center {
+  display: flex;
+  justify-content: center;
+}
+/*
+  Contenedor opcional: Limita el ancho del contenido y lo centra horizontalmente.
+  Puedes ajustar el max-width según tus necesidades.
+*/
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px; /* Padding para evitar que el contenido toque los bordes */
+  padding-left: 15px;
+  /* Aquí podrías agregar breakpoints para cambiar el max-width del contenedor */
+  /*
+  @media (min-width: 576px) { max-width: 540px; }
+  @media (min-width: 768px) { max-width: 720px; }
+  @media (min-width: 992px) { max-width: 960px; }
+  @media (min-width: 1200px) { max-width: 1140px; }
+  */
+}
+
+/*
+  Fila: Usa display: flex para organizar las columnas horizontalmente.
+  flex-wrap: wrap asegura que las columnas pasen a la siguiente línea si no caben.
+  Los márgenes negativos contrarrestan el padding de las columnas para alinear los bordes.
+*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*
+  Estilos base para todas las columnas:
+  Aplica padding para crear el "gutter" o espacio entre columnas.
+  Por defecto, en pantallas extra pequeñas (<576px), las columnas ocuparán el 100% del ancho
+  y se apilarán gracias a flex-basis y max-width.
+*/
+/* Selector que aplica a cualquier clase que contenga "col-" */
+[class*="col-"] {
+  position: relative; /* Útil si necesitas posicionar contenido dentro de la columna */
+  width: 100%; /* Por defecto, ocupan todo el ancho */
+  flex-basis: 100%; /* Define el tamaño inicial del flex item */
+  max-width: 100%; /* Asegura que no excedan el 100% por defecto */
+}
+
+/*
+  ----------------------------------------------------------------
+  Breakpoints Responsivos
+  Define el comportamiento de las columnas en diferentes tamaños de pantalla.
+  ----------------------------------------------------------------
+*/
+
+/*
+  Pantallas Pequeñas (sm): >= 576px
+  Aquí redefinimos los anchos de las columnas para este breakpoint.
+  col-sm-N ocupará N/12 del ancho total.
+*/
+@media (max-width: 767px) {
+  .text-center-sm {
+    text-align: center;
+  }
+  .col-sm-0 {
+    display: none;
+  }
+  .col-sm-1 {
+    flex: 0 0 auto;
+    width: 8.333333%;
+    max-width: 8.333333%;
+  }
+  .col-sm-2 {
+    flex: 0 0 auto;
+    width: 16.666667%;
+    max-width: 16.666667%;
+  }
+  .col-sm-3 {
+    flex: 0 0 auto;
+    width: 25%;
+    max-width: 25%;
+  }
+  .col-sm-4 {
+    flex: 0 0 auto;
+    width: 33.333333%;
+    max-width: 33.333333%;
+  }
+  .col-sm-5 {
+    flex: 0 0 auto;
+    width: 41.666667%;
+    max-width: 41.666667%;
+  }
+  .col-sm-6 {
+    flex: 0 0 auto;
+    width: 50%;
+    max-width: 50%;
+  } /* Media pantalla en 'sm' */
+  .col-sm-7 {
+    flex: 0 0 auto;
+    width: 58.333333%;
+    max-width: 58.333333%;
+  }
+  .col-sm-8 {
+    flex: 0 0 auto;
+    width: 66.666667%;
+    max-width: 66.666667%;
+  }
+  .col-sm-9 {
+    flex: 0 0 auto;
+    width: 75%;
+    max-width: 75%;
+  }
+  .col-sm-10 {
+    flex: 0 0 auto;
+    width: 83.333333%;
+    max-width: 83.333333%;
+  }
+  .col-sm-11 {
+    flex: 0 0 auto;
+    width: 91.666667%;
+    max-width: 91.666667%;
+  }
+  .col-sm-12 {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+  .xl-center {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/*
+  Pantallas Medianas (md): >= 768px
+  Aquí redefinimos los anchos de las columnas para este breakpoint.
+  col-md-N ocupará N/12 del ancho total.
+*/
+@media (min-width: 768px) {
+  .md-center {
+    display: flex;
+    justify-content: start;
+  }
+  .col-md-0 {
+    display: none;
+  }
+  .col-md-1 {
+    flex: 0 0 auto;
+    width: 8.333333%;
+    max-width: 8.333333%;
+  }
+  .col-md-2 {
+    flex: 0 0 auto;
+    width: 16.666667%;
+    max-width: 16.666667%;
+  }
+  .col-md-3 {
+    flex: 0 0 auto;
+    width: 25%;
+    max-width: 25%;
+  } /* 3 de 12 en 'md' */
+  .col-md-4 {
+    flex: 0 0 auto;
+    width: 33.333333%;
+    max-width: 33.333333%;
+  }
+  .col-md-5 {
+    flex: 0 0 auto;
+    width: 41.666667%;
+    max-width: 41.666667%;
+  }
+  .col-md-6 {
+    flex: 0 0 auto;
+    width: 50%;
+    max-width: 50%;
+  }
+  .col-md-7 {
+    flex: 0 0 auto;
+    width: 58.333333%;
+    max-width: 58.333333%;
+  }
+  .col-md-8 {
+    flex: 0 0 auto;
+    width: 66.666667%;
+    max-width: 66.666667%;
+  }
+  .col-md-9 {
+    flex: 0 0 auto;
+    width: 75%;
+    max-width: 75%;
+  }
+  .col-md-10 {
+    flex: 0 0 auto;
+    width: 83.333333%;
+    max-width: 83.333333%;
+  }
+  .col-md-11 {
+    flex: 0 0 auto;
+    width: 91.666667%;
+    max-width: 91.666667%;
+  }
+  .col-md-12 {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+/*
+  Opcional: Puedes añadir más breakpoints para pantallas grandes (lg),
+  extra grandes (xl), etc., siguiendo el mismo patrón:
+
+  @media (min-width: 992px) {
+    .col-lg-1 { flex: 0 0 auto; width: 8.333333%; max-width: 8.333333%; }
+    ...
+  }
+
+  @media (min-width: 1200px) {
+    .col-xl-1 { flex: 0 0 auto; width: 8.333333%; max-width: 8.333333%; }
+    ...
+  }
+*/
+
+.absolute-right {
+  position: absolute;
+  right: 0%;
+  z-index: 9;
+}

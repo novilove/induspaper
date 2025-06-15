@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  padding: 5%;
+
+  background: #0d3151;
+
+  /*   width: 100%;
+  height: auto;
+
+  background: #0d3151;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+  overflow-y: scroll;
+  overflow-x: hidden; */
+}
+
+:root {
+  font-family: "M PLUS Rounded 1c", sans-serif !important;
+}
+
+h1 {
+  color: #082041;
+  font-size: 2.7em;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 800;
+  line-height: 100%;
+  margin: 1rem 0;
+}
+h3 {
+  color: #082041;
+  font-size: 1.2em;
+  font-weight: 400;
+  line-height: 110%;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  margin: 0;
+  color: #ceddff;
+  font-size: 1em;
+  font-weight: 500;
+}
+a {
+  margin: 0;
+  color: #ceddff;
+  font-size: 1em;
+  font-weight: 500;
+}
+h5 {
+  margin: 0;
+  font-size: 0.8em;
+  font-weight: 300;
+  color: #ceddff;
+}
+h6 {
+  margin: 0;
+  font-size: 0.6em;
+  font-weight: 200;
+  color: #ceddff;
+}
+label {
+  color: #082041;
+  font-weight: 500;
+}
+
+button {
+  border: transparent;
+  color: #edeef0;
+  font-size: 1rem;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+  width: 100%;
+  cursor: pointer;
+  padding: 8px;
+  background: #2c88b3;
+  border-radius: 8px;
+}
+
+input:focus {
+  outline: none !important;
+  border-color: #2c88b3 !important;
+}
+textarea:focus {
+  outline: none !important;
+  border-color: #2c88b3 !important;
+}
+.container {
+  width: 100%; /* Ajusta según necesites */
+  overflow: hidden; /* Importante para contener los elementos durante la transición */
+  position: relative; /* Necesario para posicionar los elementos de forma absoluta si es necesario */
+  max-width: 1240px;
+  background: #fafafa;
+  border-radius: 8px;
+}
+/* Base styles for all content blocks (Image, Form, Thank You) */
+.content {
+  width: 100%;
+  height: auto;
+
+  /* Apply transition to transform and opacity */
+  /*  transition: transform 1s ease-in 0.1s, opacity 1s ease 0.5s; */
+  transition: transform 750ms;
+  will-change: transform;
+  /* Position all content blocks absolutely on top of each other initially */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%); /* Slides into view from below */
+
+  box-sizing: border-box; /* Include padding and border in the element's total size */
+  opacity: 0;
+  pointer-events: none; /* Prevent interaction when hidden */
+  z-index: 1; /* Default stacking order */
+}
+
+/* Style for the active content block */
+.active {
+  /* When active, move to the normal position and become visible */
+  position: static; /* Allows it to take up space in the document flow */
+  transform: translateY(0); /* Slides into view from below */
+  opacity: 1;
+  pointer-events: auto; /* Allow interaction when visible */
+  z-index: 2; /* Ensure active content is above others */
+}
+
+.content:not(.active) {
+  opacity: 0;
+  pointer-events: auto; /* Ensure no interaction */
+  transform: translateY(-100%); /* Slides up and out of view */
+  position: absolute;
+
+  /*
+      Note: The initial state (translateY(100%) from the base .content rule)
+      is what causes the slide *up* when becoming active.
+      This rule ensures it slides *up* when becoming inactive.
+    */
+  z-index: 1;
+}
+
+/* Estilos básicos para el formulario */
+#quotationForm label {
+  display: block;
+  /*   margin-bottom: 5px;
+  font-weight: bold; */
+}
+
+#quotationForm input[type="text"],
+#quotationForm input[type="email"],
+#quotationForm input[type="phone"],
+#quotationForm textarea {
+  width: calc(
+    100% - 1.7rem
+  ); /* Ajusta el ancho considerando el padding y border */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Thank You Message states */
